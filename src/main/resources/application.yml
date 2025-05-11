@@ -1,0 +1,30 @@
+spring:
+  jpa:
+    #전송쿼리확인
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    #테이블 생성 후에 data.sql 실행
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+
+  h2: #H2 콘솔 활성화
+    console:
+      enabled: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:  test_id
+            client-secret: test_secret    #덮어씌워질 값
+            scope:
+              - email
+              - profile
+jwt:
+  issuer: ajufresh@gmail.com
+  secret_key: test_key
+
