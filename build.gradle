@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'me.gojiyeon'
+version = '1.0'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'  // JPA 의존성 추가
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' //타임리프 의존성 추가
+    implementation 'org.springframework.boot:spring-boot-starter-security' //스프링 시큐리티를 사용하기 위한 스타터 추가
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6' //타임리프에서 스프링 시큐리티 사용위한 의존성 추가
+    testImplementation 'org.springframework.security:spring-security-test' //스프링시큐리티 테스트위한 의존성 추가
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    runtimeOnly 'com.h2database:h2'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.projectlombok:lombok'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1' //자바JWT 라이브러리
+    implementation 'javax.xml.bind:jaxb-api:2.3.1' //XML 문서와 JAVA 객체간 매핑 자동화
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client' //OAuth2를 사용하기 위한 스타터 추가
+    implementation 'com.mysql:mysql-connector-j'
+    implementation 'io.github.cdimascio:dotenv-java:2.2.4'
+}
+
+test {
+    useJUnitPlatform()
+}
